@@ -1,0 +1,143 @@
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  background: var(--yt-bg);
+  border-top: 1px solid var(--yt-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  padding: 0 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  height: 100%;
+  color: var(--yt-text-secondary);
+  font-size: 10px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.bottom-nav-item:hover {
+  color: var(--yt-white);
+}
+
+.bottom-nav-item.active {
+  color: var(--yt-white);
+  font-weight: 700;
+}
+
+.bottom-nav-item.active svg {
+  fill: var(--yt-white);
+}
+
+/* Shorts badge in bottom bar */
+.shorts-nav-icon-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.shorts-nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background: var(--yt-red);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+/* Central Plus button */
+.nav-plus-item {
+  flex: 0 0 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-plus-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--yt-bg-hover);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: var(--yt-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-plus-btn:hover {
+  background: var(--yt-red);
+  border-color: var(--yt-red);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+}
+
+.nav-plus-btn:active {
+  transform: scale(0.95);
+}
+
+/* Desktop Sidebar for YouTube layout on large screens */
+.desktop-sidebar {
+  display: none;
+  width: var(--sidebar-collapsed-width);
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  background: var(--yt-bg);
+  border-right: 1px solid var(--yt-border-light);
+  flex-direction: column;
+  padding: 12px 0;
+  gap: 8px;
+  z-index: 90;
+}
+
+@media (min-width: 768px) {
+  .desktop-sidebar {
+    display: flex;
+  }
+  .app-layout {
+    padding-left: var(--sidebar-collapsed-width);
+  }
+}
+
+.desktop-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 70px;
+  margin: 0 4px;
+  border-radius: var(--radius-sm);
+  color: var(--yt-text-secondary);
+  font-size: 10px;
+}
+.desktop-sidebar-item:hover {
+  background: var(--yt-bg-hover);
+  color: var(--yt-white);
+}
+.desktop-sidebar-item.active {
+  color: var(--yt-white);
+  font-weight: 700;
+  background: var(--yt-bg-hover);
+}

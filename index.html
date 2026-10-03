@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Certube - Відеохостинг у стилі YouTube</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%23FF0000'/><path d='M9.5 7.5L16.5 12L9.5 16.5V7.5Z' fill='white'/></svg>" />
+  
+  <!-- Шрифти -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/components/header/header.css" />
+  <link rel="stylesheet" href="/src/components/navigation/bottom-nav.css" />
+  <link rel="stylesheet" href="/src/components/feed/feed.css" />
+  <link rel="stylesheet" href="/src/components/shorts/shorts.css" />
+  <link rel="stylesheet" href="/src/components/studio/studio-modal.css" />
+  <link rel="stylesheet" href="/src/components/premium/premium-modal.css" />
+  <link rel="stylesheet" href="/src/components/player/video-modal.css" />
+  <link rel="stylesheet" href="/src/components/profile/profile.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Верхня панель (Шапка) -->
+    <div id="header-root"></div>
+
+    <!-- Основний контент та навігація -->
+    <div class="app-layout">
+      <!-- Навігація (Нижня панель + десктопний сайдбар) -->
+      <div id="nav-root"></div>
+
+      <!-- Головна робоча зона (Стрічка, Shorts, Підписки, Бібліотека) -->
+      <main class="main-content" id="main-content-root"></main>
+    </div>
+
+    <!-- Модальні вікна -->
+    <!-- 1. Модальне вікно перегляду відео YouTube -->
+    <div id="player-modal-root"></div>
+
+    <!-- 2. Модальне вікно студії створення/запису відео [+] -->
+    <div id="studio-modal-root"></div>
+
+    <!-- 3. Модальне вікно Certube Premium (100 грн) -->
+    <div id="premium-modal-root"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

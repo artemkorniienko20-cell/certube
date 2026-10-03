@@ -1,0 +1,184 @@
+.studio-tabs {
+  display: flex;
+  background: #181818;
+  border-bottom: 1px solid var(--yt-border-light);
+  padding: 0 16px;
+  gap: 12px;
+}
+
+.studio-tab-btn {
+  padding: 14px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--yt-text-secondary);
+  border-bottom: 2px solid transparent;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.studio-tab-btn:hover {
+  color: var(--yt-white);
+}
+.studio-tab-btn.active {
+  color: var(--yt-white);
+  border-bottom-color: var(--yt-red);
+}
+
+.studio-body {
+  padding: 24px;
+}
+
+/* Camera recorder section */
+.camera-preview-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid var(--yt-border);
+}
+
+.camera-preview-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recording-timer {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 0, 0, 0.85);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.record-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulseDot 1s infinite alternate;
+}
+
+@keyframes pulseDot {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.camera-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.record-action-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.record-action-btn.start-rec {
+  background: var(--yt-red);
+  color: #fff;
+}
+.record-action-btn.start-rec:hover {
+  background: var(--yt-red-hover);
+}
+
+.record-action-btn.stop-rec {
+  background: #fff;
+  color: #000;
+}
+
+/* Form controls */
+.studio-form-group {
+  margin-bottom: 16px;
+}
+
+.studio-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--yt-text-secondary);
+  margin-bottom: 6px;
+}
+
+.studio-input, .studio-textarea, .studio-select {
+  width: 100%;
+  background: #141414;
+  border: 1px solid var(--yt-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--yt-text-primary);
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+}
+
+.studio-input:focus, .studio-textarea:focus, .studio-select:focus {
+  border-color: var(--yt-blue);
+}
+
+.studio-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.studio-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--yt-text-primary);
+  cursor: pointer;
+}
+
+.studio-submit-btn {
+  width: 100%;
+  background: var(--yt-red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin-top: 16px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+.studio-submit-btn:hover {
+  background: var(--yt-red-hover);
+  transform: translateY(-1px);
+}
+
+/* File Drop Zone */
+.file-dropzone {
+  border: 2px dashed var(--yt-border);
+  border-radius: var(--radius-md);
+  padding: 36px 20px;
+  text-align: center;
+  background: #161616;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: all 0.2s;
+}
+.file-dropzone:hover {
+  border-color: var(--yt-blue);
+  background: #1a1a1a;
+}
