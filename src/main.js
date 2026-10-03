@@ -9,6 +9,7 @@ import { StudioModal } from './components/studio/studio-modal.js';
 import { PremiumModal } from './components/premium/premium-modal.js';
 import { VideoPlayerModal } from './components/player/video-modal.js';
 import { UserProfileView } from './components/profile/profile.js';
+import { IosInstallPrompt } from './components/ios/ios-prompt.js';
 
 class CertubeApp {
   constructor() {
@@ -32,6 +33,7 @@ class CertubeApp {
     new StudioModal(this.studioRoot);
     new PremiumModal(this.premiumRoot);
     new VideoPlayerModal(this.playerRoot);
+    new IosInstallPrompt();
 
     // Перший рендер активної вкладки
     this.renderCurrentTab();

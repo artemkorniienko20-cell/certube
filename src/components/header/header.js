@@ -60,6 +60,13 @@ export class CertubeHeader {
             ${!isPremium ? '<span class="premium-price-tag" style="opacity:0.9; margin-left:2px;">100 ₴</span>' : ''}
           </button>
 
+          <button class="header-icon-btn install-app-header-btn" id="headerInstallBtn" title="Встановити Certube на iPhone або головний екран">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </button>
+
           <button class="header-icon-btn" id="headerCreateBtn" title="Створити відео">
             ${icons.plus()}
           </button>
@@ -128,6 +135,15 @@ export class CertubeHeader {
           recognition.start();
         } else {
           alert('Голосовий пошук підтримується у сумісних браузерах (Google Chrome тощо). Введіть запит вручну.');
+        }
+      });
+    }
+
+    const headerInstallBtn = this.container.querySelector('#headerInstallBtn');
+    if (headerInstallBtn) {
+      headerInstallBtn.addEventListener('click', () => {
+        if (typeof window.openInstallAppGuide === 'function') {
+          window.openInstallAppGuide();
         }
       });
     }

@@ -3,12 +3,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-height);
+  height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: calc(16px + env(safe-area-inset-left, 0px));
+  padding-right: calc(16px + env(safe-area-inset-right, 0px));
   background-color: var(--yt-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
   z-index: 100;
   border-bottom: 1px solid var(--yt-border-light);
 }

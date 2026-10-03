@@ -1,0 +1,220 @@
+/* ===================================================
+   iOS ADD TO HOME SCREEN / PWA PROMPT STYLES
+   =================================================== */
+
+.ios-prompt-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 0 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+
+.ios-prompt-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ios-prompt-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(28, 28, 30, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 22px 20px 20px 20px;
+  color: #fff;
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+
+.ios-prompt-backdrop.active .ios-prompt-card {
+  transform: translateY(0) scale(1);
+}
+
+.ios-prompt-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ios-app-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 13px;
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  display: block;
+}
+
+.ios-header-text {
+  flex: 1;
+}
+
+.ios-app-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.ios-app-desc {
+  font-size: 13px;
+  color: #8e8e93;
+  line-height: 1.35;
+}
+
+.ios-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #d1d1d6;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.ios-close-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.ios-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(44, 44, 46, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.ios-step-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #f2f2f7;
+}
+
+.ios-step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ios-step-content {
+  flex: 1;
+}
+
+.ios-step-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.ios-inline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 0 3px;
+  color: #0a84ff;
+  font-weight: 600;
+}
+
+.ios-prompt-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.ios-btn-confirm {
+  flex: 1;
+  background: #ff0000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 4px 14px rgba(255, 0, 0, 0.35);
+}
+
+.ios-btn-confirm:hover {
+  background: #cc0000;
+}
+
+.ios-btn-confirm:active {
+  transform: scale(0.98);
+}
+
+/* Floating pointer pointing to Safari share button */
+.ios-pointer-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: #ff3b30;
+  animation: bounceDown 1.5s infinite ease-in-out;
+}
+
+.ios-pointer-arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  .ios-prompt-backdrop {
+    align-items: center;
+  }
+  .ios-pointer-arrow {
+    display: none;
+  }
+}

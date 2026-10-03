@@ -2,9 +2,26 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Certube - Відеохостинг у стилі YouTube</title>
+  
+  <!-- Favicon & PWA Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%23FF0000'/><path d='M9.5 7.5L16.5 12L9.5 16.5V7.5Z' fill='white'/></svg>" />
+
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#0f0f0f" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Apple iOS Web Clip / Home Screen Standalone Settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Certube" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png" />
   
   <!-- Шрифти -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +38,7 @@
   <link rel="stylesheet" href="/src/components/premium/premium-modal.css" />
   <link rel="stylesheet" href="/src/components/player/video-modal.css" />
   <link rel="stylesheet" href="/src/components/profile/profile.css" />
+  <link rel="stylesheet" href="/src/components/ios/ios-prompt.css" />
 </head>
 <body>
   <div id="app">
